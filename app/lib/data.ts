@@ -57,7 +57,7 @@ export async function fetchLatestInvoices() {
 export async function fetchCardData() {
   noStore();
   try {
-
+   
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
     // how to initialize multiple queries in parallel with JS.
@@ -173,7 +173,8 @@ export async function fetchInvoiceById(id: string) {
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch invoice.');
+    //throw new Error('Failed to fetch invoice.');
+    return null;
   }
 }
 
